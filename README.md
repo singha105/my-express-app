@@ -71,6 +71,21 @@ a real server; `index.js` is just the entry point that imports it and calls
 `app.listen`. CI runs this same suite on every push and pull request via
 [GitHub Actions](.github/workflows/ci.yml).
 
+## Project structure
+
+```
+my-express-app/
+├── app.js              # Express app (exported, testable)
+├── index.js            # Entry point — imports app.js and starts the server
+├── tests/
+│   └── app.test.js     # Jest + Supertest tests
+├── docs/                # Deployment screenshots
+├── .github/workflows/
+│   └── ci.yml           # GitHub Actions CI
+├── LICENSE
+└── package.json
+```
+
 ## Deployment
 
 Deployed to an AWS EC2 instance (Ubuntu 22.04, `t3.micro`, `eu-west-2`),
