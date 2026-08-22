@@ -130,6 +130,14 @@ port open to the world):**
 
 ![Security group inbound rules](docs/sg-inbound-rules.png)
 
+## Roadmap
+
+- [ ] Containerize with Docker
+- [ ] Deploy to a Kubernetes cluster
+- [ ] `pm2 startup` currently uses whatever Node version ships via `apt` on
+      Ubuntu (older than what CI and local dev use) — worth pinning to a
+      specific modern Node version on the server too
+
 ## License
 
 [MIT](LICENSE)
