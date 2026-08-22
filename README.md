@@ -5,6 +5,14 @@
 
 A minimal Express.js app that exposes a single JSON health-check endpoint.
 
+## Tech stack
+
+- [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/) — HTTP server
+- [Jest](https://jestjs.io/) + [Supertest](https://github.com/ladjs/supertest) — testing
+- [GitHub Actions](.github/workflows/ci.yml) — CI
+- [pm2](https://pm2.keymetrics.io/) — process management in production
+- AWS EC2 (Ubuntu 22.04) — hosting
+
 ## What it does
 
 `GET /` returns a JSON payload with a status flag, service name, and current
