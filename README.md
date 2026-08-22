@@ -132,6 +132,19 @@ port open to the world):**
 
 ## Roadmap
 
+**Done:**
+
+- ✅ Scaffold the Express app with a JSON health-check endpoint
+- ✅ Push to GitHub
+- ✅ Deploy to AWS EC2 (Ubuntu 22.04, `t3.micro`, `eu-west-2`)
+- ✅ Run the app under pm2, restored automatically on reboot via systemd
+- ✅ Add Jest + Supertest tests
+- ✅ Add GitHub Actions CI
+- ✅ Add MIT license
+- ✅ Document the setup and deployment (README, screenshots)
+
+**Next:**
+
 - [ ] Containerize with Docker
 - [ ] Deploy to a Kubernetes cluster
 - [ ] `pm2 startup` currently uses whatever Node version ships via `apt` on
