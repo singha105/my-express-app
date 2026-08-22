@@ -51,6 +51,12 @@ PORT=8080 npm start
 Then visit `http://localhost:3000/` (or your chosen port) in a browser or
 with `curl`.
 
+## API reference
+
+| Method | Path | Description       | Success response      |
+| ------ | ---- | ------------------ | ---------------------- |
+| GET    | `/`  | Health check | `200` with JSON `{ status, service, timestamp }` |
+
 ## Testing
 
 ```bash
