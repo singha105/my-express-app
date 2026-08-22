@@ -1,5 +1,8 @@
 # my-express-app
 
+[![CI](https://github.com/singha105/my-express-app/actions/workflows/ci.yml/badge.svg)](https://github.com/singha105/my-express-app/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A minimal Express.js app that exposes a single JSON health-check endpoint.
 
 ## What it does
@@ -34,6 +37,20 @@ PORT=8080 npm start
 
 Then visit `http://localhost:3000/` (or your chosen port) in a browser or
 with `curl`.
+
+## Testing
+
+```bash
+npm test
+```
+
+Runs the [Jest](https://jestjs.io/) suite in `tests/`, which uses
+[Supertest](https://github.com/ladjs/supertest) to hit `GET /` and check the
+response status and JSON shape. The Express app itself lives in `app.js`
+(exported, no listening port) so it can be tested directly without starting
+a real server; `index.js` is just the entry point that imports it and calls
+`app.listen`. CI runs this same suite on every push and pull request via
+[GitHub Actions](.github/workflows/ci.yml).
 
 ## Deployment
 
@@ -78,3 +95,7 @@ boot.
 port open to the world):**
 
 ![Security group inbound rules](docs/sg-inbound-rules.png)
+
+## License
+
+[MIT](LICENSE)
