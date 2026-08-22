@@ -35,11 +35,32 @@ PORT=8080 npm start
 Then visit `http://localhost:3000/` (or your chosen port) in a browser or
 with `curl`.
 
-## Screenshots
+## Deployment
 
 Deployed to an AWS EC2 instance (Ubuntu 22.04, `t3.micro`, `eu-west-2`),
 running under [pm2](https://pm2.keymetrics.io/) so it survives SSH
 disconnects.
+
+pm2 is also registered as a systemd service (`pm2-ubuntu.service`), set up
+via:
+
+```bash
+pm2 startup systemd -u ubuntu --hp /home/ubuntu
+pm2 save
+```
+
+`pm2 startup` generates and enables a systemd unit that runs `pm2 resurrect`
+on boot, restoring whatever process list was last saved with `pm2 save`. So
+after any reboot — planned or not — the app comes back up on its own,
+without anyone needing to SSH in and restart it. Verified by killing the pm2
+daemon and confirming `systemctl start pm2-ubuntu` brought `my-express-app`
+back online automatically.
+
+If you deploy a new version of the app later, run `pm2 save` again after
+restarting it so the new process list is what gets restored on the next
+boot.
+
+## Screenshots
 
 **pm2 confirming the app is running:**
 
