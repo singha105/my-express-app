@@ -29,6 +29,11 @@ Example response:
 }
 ```
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) 18 or later
+- npm (bundled with Node.js)
+
 ## Running locally
 
 ```bash
